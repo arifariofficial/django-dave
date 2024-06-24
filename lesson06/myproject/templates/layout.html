@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-      {% block title %}Django App{% endblock title %}
+      {% block title %}
+        Django App
+      {% endblock %}
     </title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
@@ -12,13 +14,14 @@
   </head>
   <body>
     <nav>
-      <a href="/">🏠</a> | 
-      <a href="/about">😀</a> |
-      <a href="/posts">📰</a>
+      <a href="/"><span role="img" aria-label="Home">🏠</span></a> |
+      <a href="/about"><span role="img" aria-label="About">😀</span></a> |
+      <a href="{% url 'posts:list' %}">📰</a>
     </nav>
     <main>
-      {% block content %} 
-      {% endblock content %}
+      {% block content %}
+
+      {% endblock %}
     </main>
   </body>
 </html>
